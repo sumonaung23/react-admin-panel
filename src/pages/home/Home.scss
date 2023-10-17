@@ -1,7 +1,8 @@
 .home {
-    background-color: aquamarine;
+    display: flex;
 
-    .title {
-        color: chocolate;
+    .homeContainer {
+        background-color: lightblue;
+        flex: 3;
     }
 }
