@@ -14,7 +14,7 @@ import Paper from '@mui/material/Paper';
             {
                 id: 1321543,
                 product: "Laptop",
-                image: "https://pixel.com/laptop-image.jpg",
+                image: 'https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg' ,
                 customer: "John Doe",
                 date: "2023-10-20",
                 amount: 999.99,
@@ -24,7 +24,7 @@ import Paper from '@mui/material/Paper';
             {
                 id: 5467890,
                 product: "Smartphone",
-                image: "https://pixel.com/smartphone-image.jpg",
+                image: "https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
                 customer: "Jane Smith",
                 date: "2023-10-19",
                 amount: 499.99,
@@ -34,7 +34,7 @@ import Paper from '@mui/material/Paper';
             {
                 id: 7891234,
                 product: "Headphones",
-                image: "https://pixel.com/headphones-image.jpg",
+                image: "https://images.pexels.com/photos/3394663/pexels-photo-3394663.jpeg?auto=compress&cs=tinysrgb&w=600",
                 customer: "David Brown",
                 date: "2023-10-18",
                 amount: 89.99,
@@ -44,7 +44,7 @@ import Paper from '@mui/material/Paper';
             {
                 id: 3156789,
                 product: "Camera",
-                image: "https://pixel.com/camera-image.jpg",
+                image: "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=600",
                 customer: "Lisa Wilson",
                 date: "2023-10-17",
                 amount: 799.99,
@@ -54,7 +54,7 @@ import Paper from '@mui/material/Paper';
             {
                 id: 9876543,
                 product: "Tablet",
-                image: "https://pixel.com/tablet-image.jpg",
+                image: "https://images.pexels.com/photos/5088022/pexels-photo-5088022.jpeg?auto=compress&cs=tinysrgb&w=600",
                 customer: "Michael Johnson",
                 date: "2023-10-16",
                 amount: 349.99,
@@ -93,7 +93,9 @@ import Paper from '@mui/material/Paper';
                                     <TableCell className='tableCell'>{row.date}</TableCell>
                                     <TableCell className='tableCell'>{row.amount}</TableCell>
                                     <TableCell className='tableCell'>{row.method}</TableCell>
-                                    <TableCell className='tableCell'>{row.status}</TableCell>
+                                    <TableCell className='tableCell'>
+                                        <span className={`status ${row.status}`}>{row.status}</span>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
