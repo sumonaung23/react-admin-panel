@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './sidebar.scss'
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import { Dashboard } from '@mui/icons-material';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import InventoryIcon from '@mui/icons-material/Inventory';
@@ -13,29 +12,42 @@ import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import { Link } from 'react-router-dom'
+import { DarkModeContext } from '../../context/darkModeContext';
 
 const Sidebar = () => {
+    const { dispatch } = useContext(DarkModeContext);
+
     return (
         <div className='sidebar'>
-            <div className="top">
-                <span className="logo">Sumon Dev</span>
+            <div className="lists">
+                <Link to='/' style={{textDecoration: 'none'}}>
+                    <span className="logo">Sumon Dev</span>
+                </Link>
             </div>
             <hr /> 
             <div className="center">
                 <ul>
                     <p className="title">MAIN</p>
-                    <li>
-                        <Dashboard className='icon' />
-                        <span>Dashboard</span>
-                    </li>
-                    <li>
-                        <PersonOutlineIcon className='icon' />
-                        <span>Users</span>
-                    </li>
-                    <li>
-                        <InventoryIcon className='icon' />
-                        <span>Products</span>
-                    </li>
+                    <Link to='/' style={{textDecoration:'none'}}>
+                        <li>
+                            <Dashboard className='icon' />
+                            <span>Dashboard</span>
+                        </li>
+                    </Link>
+                    <p className="title">LISTS</p>
+                    <Link to='/users' style={{textDecoration: 'none'}}>
+                        <li>
+                            <PersonOutlineIcon className='icon' />
+                            <span>Users</span>
+                        </li>
+                    </Link>
+                    <Link to='/products' style={{textDecoration: 'none'}}>
+                        <li>
+                            <InventoryIcon className='icon' />
+                            <span>Products</span>
+                        </li>
+                    </Link>
                     <li>
                         <ViewStreamIcon className='icon' />
                         <span>Orders</span>
@@ -75,9 +87,9 @@ const Sidebar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="bottom">
-                <div className="colorOption"></div>
-                <div className="colorOption"></div>
+            <div className="color-theme">
+                <div className="colorOption" onClick={() => dispatch({type:"LIGHT"})}></div>
+                <div className="colorOption" onClick={() => dispatch({type:"DARK"})}></div>
             </div>
         </div>
     )
