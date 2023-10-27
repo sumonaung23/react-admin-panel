@@ -1,10 +1,9 @@
 .sidebar {
     flex: 1;
-    border: 0.5px solid #010220;
+    border: 0.5px solid hsla(0, 1%, 26%, 0.212);
     min-height: 100vh;
 
-    .top {
-        background-color: blueviolet;
+    .lists {
         height: 50px;
         display: flex;
         align-items: center;
@@ -13,14 +12,14 @@
         .logo {
             font-size: 20px;
             font-weight: bold;
-            color: #150113;
+            color: #8884d8;
         }
     }
 }
 
 hr {
     height: 0;
-    border: 0.5px solid rgb(4, 90, 60);
+    opacity: 0.3;
 }
 
 .center {
@@ -32,7 +31,7 @@ hr {
         padding: 0;
 
         .title {
-            font-size: 10px;
+            font-size: 13px;
             font-weight: bold;
             color: #999;
             margin-top: 15px;
@@ -51,22 +50,25 @@ hr {
 
             .icon {
                 font-size: 18px;
-                color: #55064c;
+                color: #8884d8;
             }
 
             span {
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: bold;
-                color: #888;
+                color: #5f5f5f;
                 margin-left: 10px ;
             }
         }
     }
 }
 
-.bottom {
+.color-theme {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
     margin: 10px;
 
     .colorOption {
@@ -78,11 +80,11 @@ hr {
         margin: 5px;
 
         &:nth-child(1) {
-            background-color: #010220;
+            background-color: #d7d7df;
         }
 
         &:nth-child(2) {
-            background-color: #d7d7df;
+            background-color: #010220;
         }
     }
 }
