@@ -14,9 +14,9 @@ const Navbar = () => {
 
     const renderModeToggleIcon = () => {
         if (darkMode) {
-            return <DarkModeOutlined className='icon' onClick={() => dispatch({ type: "TOGGLE" })} />;
-        } else {
             return <LightModeOutlined className='icon' onClick={() => dispatch({ type: "TOGGLE" })} />;
+        } else {
+            return <DarkModeOutlined className='icon' onClick={() => dispatch({ type: "TOGGLE" })} />;
         }
     }
 
